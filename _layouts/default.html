@@ -12,12 +12,49 @@
   <head>
     {% include head.html %}
     {% include head/custom.html %}
+    <style>
+      /* Container holding the image and the text */
+      .container {
+      position: relative;
+      }
+
+      /* Bottom right text */
+      .text-block {
+      /*position: absolute;
+      bottom: 20px;
+      right: 20px;
+      background-color: transparent;
+      color: white;
+      padding-left: 20px;
+      padding-right: 20px;
+      */
+      left: 0;
+      top: 50%;
+      position:absolute;
+      text-align:center;
+
+      width: 100%;
+      color: white;
+      }
+    </style>
   </head>
 
   <body class="layout--{{ page.layout | default: layout.layout }}{% if page.classes or layout.classes %}{{ page.classes | default: layout.classes | join: ' ' | prepend: ' ' }}{% endif %}">
     {% include_cached skip-links.html %}
     {% include_cached browser-upgrade.html %}
     {% include_cached masthead.html %}
+
+    {% if page.url == "/" %}
+      <div class="container">
+        <img src="{{ site.home_image }}" alt="" style="width:100%;">
+        <div class="text-block">
+          <h1>"La vita è una commedia"</h1>
+        </div>
+      </div>
+    {% endif %}
+    {% if page.url != "/" and page.url != "about"%}
+      <img src="{{ page.header.teaser }}" alt="">
+    {% endif %}
 
     <div class="initial-content">
       {{ content }}
