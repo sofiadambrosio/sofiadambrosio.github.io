@@ -1,4 +1,3 @@
-# Il piccolo Leopin
 
 Un biglietto di sola andata per la terra del Tutto, dell’Essenza. 
 Il piccolo Leopin,bambino prodigio, non può che salire. 
